@@ -1,0 +1,13 @@
+CyberGuard — Password Strength & Security AnalyzerA lightweight, client-side web application for real-time cryptographic password entropy analysis, structural pattern detection, hardware brute-force estimations, and cryptographically secure password generation.Key FeaturesReal-Time Entropy Engine: Calculates raw entropy bits using $E = L \times \log_2(N)$ and applies penalty deductions for structural vulnerabilities.Pattern & Vulnerability Detection: Identifies sequential strings (123, abc), keyboard walks (qwerty, asdf), duplicate character repetitions, common dictionary matches, predictable leetspeak (P@ssw0rd), and 4-digit year patterns.Hardware Crack-Time Matrix: Benchmarks time-to-crack across 4 realistic attack scenarios:Throttled Online API (100 attempts/hr)Unthrottled Online Form (1,000 attempts/sec)Offline GPU Hashcat Rig (100 Billion attempts/sec)Supercomputer / Quantum Cluster (1 Trillion attempts/sec)CSPRNG Password & Passphrase Generator: Powered by window.crypto.getRandomValues() supporting both character-based passwords and multi-word Diceware passphrases.100% Privacy-First Architecture: Operates completely inside the browser. Zero external API calls or telemetry—your passwords never touch a server.Cybersecurity UI & Utilities: Features a radial score gauge, character composition breakdown, interactive security checklist, shoulder-surfing blur shield, and quick test presets.How It Works1. Entropy & Penalty CalculationRaw entropy measures mathematical randomness based on length ($L$) and character pool depth ($N$):$$E_{\text{raw}} = L \times \log_2(N)$$Adjusted entropy ($E_{\text{adjusted}}$) subtracts penalty bits ($P$) derived from structural flaws:$$E_{\text{adjusted}} = \max\left(0, E_{\text{raw}} - \sum P_{\text{penalties}}\right)$$2. Character Pool Sizes ($N$)Lowercase Letters (a-z): 26Uppercase Letters (A-Z): 26Digits (0-9): 10Symbols (!@#$%...): 33Spaces: 1Quick StartPrerequisitesNo node modules, build steps, or backend servers are required. All dependencies are loaded via lightweight CDNs.InstallationClone the repository:git clone https://github.com/your-username/cyberguard-password-analyzer.git
+Navigate to the project directory:cd cyberguard-password-analyzer
+Open index.html in any modern web browser:# On macOS
+open index.html
+
+# On Linux
+xdg-open index.html
+
+# On Windows
+start index.html
+Tech StackMarkup & Structure: HTML5Styling: Tailwind CSS (CDN)Icons: Lucide IconsTypography: Google Fonts (Inter & JetBrains Mono)Cryptography Engine: Native Web Crypto API (window.crypto)Project Structure├── index.html        # Single-file standalone web application
+└── README.md         # Documentation
+LicenseDistributed under the MIT License. See LICENSE for more information.
