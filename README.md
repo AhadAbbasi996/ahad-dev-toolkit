@@ -1,13 +1,66 @@
-CyberGuard — Password Strength & Security AnalyzerA lightweight, client-side web application for real-time cryptographic password entropy analysis, structural pattern detection, hardware brute-force estimations, and cryptographically secure password generation.Key FeaturesReal-Time Entropy Engine: Calculates raw entropy bits using $E = L \times \log_2(N)$ and applies penalty deductions for structural vulnerabilities.Pattern & Vulnerability Detection: Identifies sequential strings (123, abc), keyboard walks (qwerty, asdf), duplicate character repetitions, common dictionary matches, predictable leetspeak (P@ssw0rd), and 4-digit year patterns.Hardware Crack-Time Matrix: Benchmarks time-to-crack across 4 realistic attack scenarios:Throttled Online API (100 attempts/hr)Unthrottled Online Form (1,000 attempts/sec)Offline GPU Hashcat Rig (100 Billion attempts/sec)Supercomputer / Quantum Cluster (1 Trillion attempts/sec)CSPRNG Password & Passphrase Generator: Powered by window.crypto.getRandomValues() supporting both character-based passwords and multi-word Diceware passphrases.100% Privacy-First Architecture: Operates completely inside the browser. Zero external API calls or telemetry—your passwords never touch a server.Cybersecurity UI & Utilities: Features a radial score gauge, character composition breakdown, interactive security checklist, shoulder-surfing blur shield, and quick test presets.How It Works1. Entropy & Penalty CalculationRaw entropy measures mathematical randomness based on length ($L$) and character pool depth ($N$):$$E_{\text{raw}} = L \times \log_2(N)$$Adjusted entropy ($E_{\text{adjusted}}$) subtracts penalty bits ($P$) derived from structural flaws:$$E_{\text{adjusted}} = \max\left(0, E_{\text{raw}} - \sum P_{\text{penalties}}\right)$$2. Character Pool Sizes ($N$)Lowercase Letters (a-z): 26Uppercase Letters (A-Z): 26Digits (0-9): 10Symbols (!@#$%...): 33Spaces: 1Quick StartPrerequisitesNo node modules, build steps, or backend servers are required. All dependencies are loaded via lightweight CDNs.InstallationClone the repository:git clone https://github.com/your-username/cyberguard-password-analyzer.git
-Navigate to the project directory:cd cyberguard-password-analyzer
-Open index.html in any modern web browser:# On macOS
-open index.html
+# CyberGuard — Password Strength & Security Analyzer
 
-# On Linux
-xdg-open index.html
+CyberGuard is a browser-based password security tool that analyzes password strength, estimates entropy, detects predictable patterns, and generates random passwords and passphrases. It features a cybersecurity-focused dashboard with real-time feedback and privacy-conscious, client-side processing.
 
-# On Windows
+## Features
+
+- **Real-Time Password Analysis** — Displays strength scores, character composition, and entropy estimates.
+- **Pattern Detection** — Identifies common passwords, repeated characters, sequential patterns, keyboard walks, and year patterns.
+- **Crack-Time Estimates** — Compares estimated cracking times across different attack-rate scenarios.
+- **Secure Password Generator** — Generates random passwords using the browser's Web Crypto API.
+- **Passphrase Generator** — Creates configurable multiword passphrases.
+- **Quick Presets** — Test weak, complex, sequential, and passphrase examples.
+- **Privacy Controls** — Includes password visibility, blur protection, and clipboard-copy options.
+- **Responsive Interface** — Built with a dark cybersecurity-themed dashboard.
+
+## Technologies Used
+
+- HTML5
+- Tailwind CSS (CDN)
+- JavaScript
+- Lucide Icons
+- Web Crypto API
+
+## Getting Started
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/AhadAbbasi996/ahad-dev-toolkit.git
+   ```
+2. Open the `password-strength-checker` folder.
+ ```bash
+cd ahad-dev-toolkit/password-strength-checker
+ ```
+3. Open `index.html` in a modern web browser.
+On Windows:
+ ```bash
 start index.html
-Tech StackMarkup & Structure: HTML5Styling: Tailwind CSS (CDN)Icons: Lucide IconsTypography: Google Fonts (Inter & JetBrains Mono)Cryptography Engine: Native Web Crypto API (window.crypto)Project Structure├── index.html        # Single-file standalone web application
-└── README.md         # Documentation
-LicenseDistributed under the MIT License. See LICENSE for more information.
+ ```
+ On macOS:
+ ```bash
+open index.html
+```
+
+On Linux:
+ ```bash
+xdg-open index.html
+```
+No build tools or package installation are required. A modern web browser is all you need.
+
+## Privacy & Security
+
+Password analysis is performed in the browser, and the application does not send entered passwords to a backend server. However, the page loads third-party resources through CDNs. For sensitive use, review the code and consider hosting dependencies locally.
+
+**Important:** Strength scores, entropy values, and cracking-time estimates are heuristic approximations, not guarantees of real-world security. Use a trusted password manager and avoid reusing passwords.
+
+## Author
+
+**Abdul Ahad**  
+Software Engineering Undergraduate | Cybersecurity Enthusiast
+
+- GitHub: [@AhadAbbasi996](https://github.com/AhadAbbasi996)
+- Project Repository: [ahad-dev-toolkit](https://github.com/AhadAbbasi996/ahad-dev-toolkit)
+
+---
+
+*Built as a practical project exploring password security, browser-based JavaScript, and cybersecurity concepts.*
